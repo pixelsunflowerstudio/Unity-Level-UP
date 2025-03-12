@@ -20,6 +20,7 @@ public interface IStateMachine
 public abstract class StateMachine<TStateMachine, TEntity> : IStateMachine
 {
 	private TEntity _owner;
+	private State<TStateMachine> _previousState;
 	private State<TStateMachine> _currentState;
 	private List<State<TStateMachine>> _states = new List<State<TStateMachine>>();
 
@@ -41,8 +42,6 @@ public abstract class StateMachine<TStateMachine, TEntity> : IStateMachine
 	{
 		_previousState = _currentState;
 		if (_previousState != null) _previousState.Exit();
-
-		_stateHistory.Clear();
 
 		_currentState = _states[Convert.ToInt32(state)];
 		_currentState.Enter(stateData);
