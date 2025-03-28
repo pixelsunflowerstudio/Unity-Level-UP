@@ -16,6 +16,19 @@ using Cysharp.Threading.Tasks;
 // This script requires the UniTask package. But if you do not have the package, you can modify the function to use a coroutine instead. UniTask is just more useful.
 #endregion
 
+#region Download URL Template Guide
+// Sheet public link:
+// For example, the public link to the Google Sheet file is this: https://docs.google.com/spreadsheets/d/1FSDBXegmaxGpJgsbUeMQlN6EuyjR8YggLFEX68y_IV4/edit?usp=sharing
+// REMOVE the ending: "edit?usp=sharing"
+// Then use as the GsDatabasePath below
+// Correct example: https://docs.google.com/spreadsheets/d/1FSDBXegmaxGpJgsbUeMQlN6EuyjR8YggLFEX68y_IV4/
+
+// Sheet ID
+// In the browser address: https://docs.google.com/spreadsheets/d/1FSDBXegmaxGpJgsbUeMQlN6EuyjR8YggLFEX68y_IV4/edit?gid=1169038705#gid=1169038705
+// The sheet ID changes depending on what sheet it is. in this case: 1169038705
+// The sheet ID can be found behind the: "gid"
+#endregion
+
 [CreateAssetMenu(fileName = "CSVCollectionManager", menuName = "Scriptable Object/CSV Tools/CSV Collection Manager")]
 public class CSVCollectionManager : ScriptableObject
 {
